@@ -27,6 +27,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  double? poids;
+
   @override
   Widget build(BuildContext context) {
     return new GestureDetector(
@@ -45,8 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 elevation: 10.0,
                 child: new Column(children: <Widget>[
                   new TextField(
-                    keyboardType: TextInputType.number,
-                  )
+                      keyboardType: TextInputType.number,
+                      onChanged: (String string) {
+                        setState(() {
+                          poids = double.tryParse(string);
+                        });
+                      })
                 ]),
               )
             ],
