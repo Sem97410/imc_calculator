@@ -46,13 +46,27 @@ class _MyHomePageState extends State<MyHomePage> {
               new Card(
                 elevation: 10.0,
                 child: new Column(children: <Widget>[
+                  new Row(
+                    mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      texteAvecStyle("Femme", color: Colors.pink),
+                      new Switch(value: genre, onChanged: (bool b){
+                        
+                      })
+
+
+                      texteAvecStyle("Homme", color: Colors.blue)
+                    ],
+                  )
                   new TextField(
                       keyboardType: TextInputType.number,
                       onChanged: (String string) {
                         setState(() {
                           poids = double.tryParse(string);
                         });
-                      })
+                      },
+                      decoration: new InputDecoration(
+                          labelText: "Entrez votre poids en kilos."))
                 ]),
               )
             ],
